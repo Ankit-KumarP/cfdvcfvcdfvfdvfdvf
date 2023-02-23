@@ -1,0 +1,16 @@
+                                   SELF PROTFOLIO
+SITE1:fontawsome.com                
+
+
+ <#header>
+    <.container>
+      <nav>
+        <img>
+        <ul>
+      </nav>
+      <.header-text>
+      </.header-text>    
+    <./container>     
+ </#header>     
+
+                             

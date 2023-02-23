@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Pacifico&display=swap');
+
+/* 1.#header nav ul li a:hover::after {
+  width: 100%;
+}
+
+2.tab-links.active-link::after { tab link ka after ka width 0 haii but tablink mai jo active link hai uske after ka width 50% krdo.
+  width: 50%;
+} */
+
+/* 3. grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); */
+/* 1FR = 1/3rd or 33.333% of the available space.  */
+
+/* 4.#services .container .services-list div {
+  transition: background 0.5s, transform 0.5s;
+}
+#services .container .services-list div:hover {
+  background-color: rgba(172, 255, 47, 0.552);
+  transform: translateY(-15px);
+} */
+
+/* 5.background-image: linear-gradient(rgba(255, 255, 255, 0.218), rgb(43, 72, 0)); */
+
+/* 6.line-height : set the distance between lines of text. */
+/* 7.#portfolio .work-list .work:hover .layer {
+  height: 100%;// work pai hover krege to layer mai change hoga
+} */
+/* 8.width: fit-content; */
+/* <a href="/images/Resume_AnkitKumar.pdf" download class="btn ">Download CV</a> : resume is downloadable */
+
+/* GENERAL CLASS */
+.sub-titles {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+.btn {
+  display: block;
+  margin: 20px auto;
+  width: fit-content;
+  border: 1px solid green;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 1s;
+}
+.btn:hover {
+  background-color: rgba(172, 255, 47, 0.474);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Libre Baskerville', serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+/* HEADER */
+
+#header {
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 100vh;
+  background: url("images/bg.png") center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+#header .container {
+  margin: 10px 10%;
+}
+
+#header nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#header nav img {
+  width: 70px;
+  border-radius: 50%;
+}
+#header nav ul {
+}
+#header nav ul li {
+  display: inline-block;
+  margin: 10px 20px;
+  list-style-type: none;
+}
+#header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+}
+#header nav ul li a::after {
+  content: "";
+  position: absolute;
+  background-color: greenyellow;
+  width: 0%;
+  height: 4px;
+  bottom: -5px;
+  left: 0;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+
+#header nav ul li a:hover::after {
+  width: 100%;
+}
+#header .container .header-text {
+  font-size: 30px;
+  margin: 19% 2%;
+}
+#header .container .header-text p {
+  font-size: 23px;
+}
+#header .container .header-text span {
+  color: rgb(137, 223, 7);
+}
+
+/* ABOUT */
+
+#about {
+  /* border: 1px solid rgb(0, 255, 60); */
+  background-color: rgba(0, 0, 0, 0.626);
+  color: rgb(192, 194, 196);
+  padding: 50px 70px;
+}
+#about .container {
+}
+#about .container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#about .container .row .about-col-1 {
+  flex-basis: 27%;
+}
+#about .container .row .about-col-1 img {
+  width: 100%;
+  border-radius: 10px;
+}
+#about .container .row .about-col-2 {
+  flex-basis: 65%;
+}
+#about .container .row .about-col-2 .sub-titles {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+#about .container .row .about-col-2 p {
+}
+#about .container .row .about-col-2 .tab-titles {
+  margin-top: 10px;
+  display: flex;
+}
+
+#about .container .row .about-col-2 .tab-titles .tab-links {
+  margin-right: 45px;
+  cursor: pointer;
+  font-style: italic;
+  font-weight: bolder;
+  position: relative;
+}
+#about .container .row .about-col-2 .tab-titles .tab-links::after {
+  content: "";
+  position: absolute;
+  background-color: greenyellow;
+  width: 0;
+  height: 4.3px;
+  bottom: -5px;
+  left: 0;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+#about .container .row .about-col-2 .tab-titles .tab-links.active-link::after {
+  width: 50%;
+}
+#about .container .row .about-col-2 .tab-contents {
+  margin-top: 19px;
+  display: none;
+}
+#about .container .row .about-col-2 .active-tab {
+  display: block;
+}
+#about .container .row .about-col-2 .tab-contents li:nth-child(odd) {
+  color: rgba(172, 255, 47, 0.496);
+}
+#about .container .row .about-col-2 .tab-contents li {
+  list-style-type: none;
+}
+#about .container .row .about-col-2 .active-tab {
+  display: block;
+}
+
+/* SERVICES */
+
+#services {
+  /* border: 1px solid salmon; */
+  padding: 30px 70px;
+}
+#services .container {
+}
+
+#services .container .services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 35px 35px;
+}
+#services .container .services-list div {
+  background-color: rgba(61, 61, 61, 0.292);
+  padding: 35px;
+  margin: 27px 0px;
+  border-radius: 4px;
+  transition: background 0.5s, transform 0.5s;
+}
+
+#services .container .services-list div i {
+  font-size: 35px;
+}
+#services .container .services-list div h2 {
+  font-size: 30px;
+  margin: 15px 0px;
+}
+#services .container .services-list div p {
+  margin: 19px 0px;
+  font-weight: 100;
+}
+#services .container .services-list div a {
+}
+#services .container .services-list div:hover {
+  background-color: rgba(47, 255, 127, 0.147);
+  transform: translateY(-15px);
+}
+
+/* PORTFOLIO */
+
+#portfolio {
+  padding: 30px 70px;
+}
+#portfolio .container {
+}
+#portfolio .container .work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 50px 60px;
+  margin: 37px 0px;
+}
+#portfolio .work-list .work {
+  position: relative;
+  transition: transform 0.7s;
+}
+#portfolio .work-list .work:hover {
+  transform: scale(1.1);
+}
+#portfolio .work-list .work:hover .layer {
+  height: 100%;
+}
+#portfolio .work img {
+  /* border: 1px solid rgb(214, 15, 15); */
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+#portfolio .work .layer {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 0%;
+  padding: 50px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.218), rgb(43, 72, 0));
+  transition: height 0.7s;
+}
+#portfolio .work .layer h3 {
+  font-weight: 500px;
+  margin-bottom: 20px;
+}
+#portfolio .work .layer a {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: green;
+  color: wheat;
+  border-radius: 50%;
+  line-height: normal;
+}
+
+/* CONTACT */
+
+#contact {
+  padding: 30px 70px;
+  background-color: rgba(15, 14, 14, 0.48);
+}
+#contact .container {
+}
+.container .row {
+  justify-content: space-between;
+  display: flex;
+}
+.row .contact-left {
+  flex-basis: 30%;
+}
+.contact-left p {
+  margin: 35px 12px 35px 12px;
+  font-size: 19px;
+}
+.contact-left p span {
+  margin-right: 20px;
+}
+.contact-left p span i {
+  font-size: 25px;
+  color: greenyellow;
+}
+.contact-left .social-icons {
+  margin: 40px 0px;
+}
+.social-icons a {
+  text-decoration: none;
+}
+.social-icons a i {
+  margin-right: 35px;
+  font-size: 25px;
+  color: white;
+  transition: transform 0.3s;
+}
+.social-icons a i:hover {
+  color: greenyellow;
+  transform: translateY(-5px);
+  transform: scale(1.4);
+}
+.contact-left .btn {
+  margin: 50px 0px;
+}
+
+.row .contact-right {
+  flex-basis: 55%;
+}
+.contact-right form {
+  width: 100%;
+  height: 100%;
+}
+form input {
+  margin: 20px;
+  padding: 20px;
+  color: white;
+  display: block;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}
+form textarea {
+  margin: 20px;
+  padding: 20px;
+  color: white;
+  display: block;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.605);
+  border-radius: 10px;
+}
+form button {
+  background-color: black;
+  color: white;
+  display: block;
+  margin: 30px;
+  width: fit-content;
+  border: 1px solid green;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 1s;
+}
+form button:hover {
+  background-color: rgba(172, 255, 47, 0.474);
+}
+.copyright {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(143, 203, 23);
+  background-color: rgba(13, 204, 32, 0.109);
+  font-size: 15px;
+  height: 50px;
+  width: 100vw;
+}
